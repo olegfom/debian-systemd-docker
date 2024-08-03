@@ -2,7 +2,7 @@
 sudo docker buildx build -t olegfom/debian-systemd:12 ./
 
 #Run the image locally (it returns the container-id when it starts). It is based on Debian 12.
-#The image has to run in a privileged mode. Older versions allowed to map /sys/fs/cgroup. No more.
+#The image has to run in a privileged mode.
 sudo docker run --detach --privileged --cgroupns=host --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw olegfom/debian-systemd:12
 
 #Run the container shell
