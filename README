@@ -1,0 +1,8 @@
+#Copy the Dockerfile to a local folder and build the image (if planning to edit it later)
+sudo docker buildx build -t olegfom/debian-systemd:12 ./
+
+#Run the image locally (it returns the container-id when it starts)
+sudo docker run --detach --privileged --cgroupns=host --volume=/sys/fs/cgroup:/sys/fs/cgroup:rw olegfom/debian-systemd:12
+
+#Run the container shell
+sudo docker exec -it [container-id] sh
